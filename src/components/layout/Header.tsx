@@ -42,14 +42,18 @@ const nav = [
 export function Logo({ dark = false }: { dark?: boolean }) {
   return (
     <Link to="/" className="group flex items-center" aria-label="Hague Import & Export — home">
-      <img
-        src={dark ? "/brand/logo-wide.png" : "/brand/logo-wide-dark.png"}
-        alt="HAGUE Import & Export"
+      <span
         className={cn(
-          "w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]",
-          dark ? "h-11" : "h-10 lg:h-11 [filter:drop-shadow(0_1px_5px_rgba(255,255,255,0.10))_drop-shadow(0_2px_8px_rgba(0,0,0,0.35))]"
+          "inline-flex items-center rounded-xl px-2.5 py-1 transition-transform duration-300 group-hover:scale-[1.03]",
+          dark ? "" : "bg-white shadow-[0_2px_10px_rgba(0,0,0,0.35)]"
         )}
-      />
+      >
+        <img
+          src={dark ? "/brand/logo-wide.png" : "/brand/logo-wide-dark.png"}
+          alt="HAGUE Import & Export"
+          className={cn("w-auto object-contain", dark ? "h-11" : "h-9 lg:h-10")}
+        />
+      </span>
     </Link>
   );
 }
